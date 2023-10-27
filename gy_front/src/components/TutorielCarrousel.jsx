@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg_landing from "../assets/images/home-background-01.jpg";
 import { Button } from "flowbite-react";
+import { FiHeart, FiMessageSquare, FiEye, FiArrowRight } from "react-icons/fi";
 
 function TutorielCarrousel() {
   const settings = {
@@ -107,22 +108,22 @@ function TutorielCarrousel() {
   return (
     <div className="w-full  py-10  p-5 min-h-[450px] my-12">
       <div className="container mx-auto min-h-full">
-        <h1 className="text-3xl font-semibold text-center  my-12">
+        <h1 className="text-2xl font-semibold  text-white  my-12">
           Tutoriels Recentes
         </h1>
-        <Slider {...settings} className="text-center px-2">
+        <Slider {...settings} className="text-center px-2 my-10">
           {carouselData.map((item, index) => (
             <div
               key={index}
-              className="relative cursor-pointer bg-white min-h-[300px] overflow-hidden p-4 shadow-lg rounded-lg max-w-[400px]"
+              className="relative cursor-pointer border-[#dedede] border-2 min-h-[300px] overflow-hidden p-4  rounded-lg max-w-[400px]"
             >
               <div
                 className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-center -z-2"
                 style={{ backgroundImage: `url(${item.image})` }}
               ></div>
-              <div className="absolute  top-0 left-0 w-full h-full p-5 text-center z-50 text-white/80">
+              <div className="absolute  top-0 left-0 w-full h-full p-5 text-center z-50 text-[#9e9e9e]">
                 <div className="absolute top-0 left-0 w-full h-full z-50 p-5  mt-10">
-                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                  <h2 className="text-xl font-semibold mb-2 text[#161616]">{item.title}</h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Iste ex voluptatum necessitatibus reprehenderit accusamus
@@ -133,26 +134,30 @@ function TutorielCarrousel() {
                       Publié le {item.date} par {item.author}
                     </p>
                     <div className="flex items-center space-x-4 text-gray-600  justify-center"></div>
-                    <div className="flex justify-between items-center text-white/86 mt-2 text-[12px]">
+                    <div className="flex justify-between items-center text-[#dedede]/86 mt-2 text-[12px]">
                       <div>
                         <span>{item.likes} </span>
-                        <span className="text-red-400">J'aime</span>
+                        <span className="text-red-400 ">
+                          <FiHeart />
+                        </span>
                       </div>
                       <div>
-                        <span>{item.views}</span> <span className="">Vues</span>
+                        <span>{item.views}</span>{" "}
+                        <span className="">
+                          <FiEye />
+                        </span>
                       </div>
 
                       <div>
-                        <span>{item.comments}</span> Commentaires
+                        <span>{item.comments}</span> <FiMessageSquare />{" "}
                       </div>
-                      <Button className="border-teal-800 py-0 rounded-full border-2 bg-gradient-to-tr from-teal-800 bg-transparent shadow-md  text-whie hover:text-white">
-                        <p>Read more</p>
-                        {/* <SeeSourceCodeForSVG /> */}
+                      <Button className=" px-2 border-2  rounded-full  bg-teal-800 text-sm shadow-md  font-bold  transition duration-300 hover:bg-transparent text-[#dedede]">
+                        Lire la suite <FiArrowRight />
                       </Button>
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black to-teal-400/10  -z-5 "></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black  to-[#161616]/60 -z-5 "></div>
               </div>
             </div>
           ))}

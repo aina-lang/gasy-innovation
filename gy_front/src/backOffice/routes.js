@@ -1,58 +1,51 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
+// import React from 'react';
+import { HiUser, 
+    // HiPlusCircle,
+    //  HiNewspaper, 
+    // HiChatAlt, 
+    // HiChartPie
+ } from 'react-icons/hi';
+import Layout from './views/Layout';
+import Dashboard from './views/Dashboard/Dashboard';
+import EditProfil from './views/Profil/Edit';
 
-// Layout Types
-import { DefaultLayout } from "./layouts";
+// import Profil from './views/Profil';
+// import AddPost from './views/AddPost';
+// import Post from './views/Post';
+// import Message from './views/Message';
+// import Dashboard from './views/Dashboard';
 
-// Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
-
-export default [
+const BackofficeRoutes = [
   {
-    path: "/",
-    exact: true,
-    layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    path: '/backoffice/',
+    icon: HiUser,
+    component: Dashboard,
   },
   {
-    path: "/blog-overview",
-    layout: DefaultLayout,
-    component: BlogOverview
+    path: '/backoffice/dashboard',
+    icon: HiUser,
+    component: Dashboard,
   },
+//   {
+//     path: '/backoffice/addPost',
+//     icon: HiPlusCircle,
+//     component: AddPost,
+//   },
+//   {
+//     path: '/backoffice/post',
+//     icon: HiNewspaper,
+//     component: Post,
+//   },
+//   {
+//     path: '/backoffice/message',
+//     icon: HiChatAlt,
+//     component: Message,
+//   },
   {
-    path: "/user-profile-lite",
-    layout: DefaultLayout,
-    component: UserProfileLite
+    path: '/backoffice/profil',
+    component: EditProfil,
   },
-  {
-    path: "/add-new-post",
-    layout: DefaultLayout,
-    component: AddNewPost
-  },
-  {
-    path: "/errors",
-    layout: DefaultLayout,
-    component: Errors
-  },
-  {
-    path: "/components-overview",
-    layout: DefaultLayout,
-    component: ComponentsOverview
-  },
-  {
-    path: "/tables",
-    layout: DefaultLayout,
-    component: Tables
-  },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  }
+  
 ];
+
+export default BackofficeRoutes;
