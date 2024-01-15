@@ -15,8 +15,8 @@ function Edit() {
     setUrlImage(URL.createObjectURL(e.target.files[0]));
   };
   return (
-    <div className="flex ">
-      <div className="bg-white p-3 min-w-[450px] rounded-md shadow-md">
+    <div className="min-w-[500px]  max-w-[500px]    max-h-screen min-h-[600px]">
+      <div className="bg-white p-3 rounded-md shadow-md">
         <div className="h-[90px] w-[90px] bg-red-500 rounded-full overflow-hidden relative ">
           <input
             onChange={onPickerHandleChange}
@@ -40,6 +40,9 @@ function Edit() {
             className="h-[90px] w-[90px] bg-blue-500 rounded-full overflow-hidden relative"
           ></div>
         </div>
+      </div>
+      <div className="bg-white mt-2  p-3 min-w-[450px] min-h-[600px] rounded-md shadow-md">
+g
       </div>
     </div>
   );

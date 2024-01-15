@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bg_landing from "../assets/images/home-background-01.jpg";
+import bg_landing from "../assets/images/test.png";
 import { Button } from "flowbite-react";
 import { FiHeart, FiMessageSquare, FiEye, FiArrowRight } from "react-icons/fi";
 
@@ -106,35 +106,35 @@ function TutorielCarrousel() {
   ];
 
   return (
-    <div className="w-full  py-10  p-5 min-h-[450px] my-12">
+    <div className="w-full  py-10  p-5 min-h-[450px] my-12 bg-white">
       <div className="container mx-auto min-h-full">
-        <h1 className="text-2xl font-semibold  text-white  my-12">
+        <h1 className="text-2xl font-semibold  text-gray-500  my-12">
           Tutoriels Recentes
         </h1>
         <Slider {...settings} className="text-center px-2 my-10">
           {carouselData.map((item, index) => (
             <div
               key={index}
-              className="relative cursor-pointer border-[#dedede] border-2 min-h-[300px] overflow-hidden p-4  rounded-lg max-w-[400px]"
+              className="relative cursor-pointer  shadow-md min-h-[300px] overflow-hidden p-4  rounded-lg max-w-[400px]"
             >
               <div
                 className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-center -z-2"
                 style={{ backgroundImage: `url(${item.image})` }}
-              ></div>
-              <div className="absolute  top-0 left-0 w-full h-full p-5 text-center z-50 text-[#9e9e9e]">
-                <div className="absolute top-0 left-0 w-full h-full z-50 p-5  mt-10">
-                  <h2 className="text-xl font-semibold mb-2 text[#161616]">{item.title}</h2>
+              >
+                <p className="text-sm  my-3 text-white text-left mx-2">
+                  Publié le {item.date} par {item.author}
+                </p>
+              </div>
+              <div className="absolute  top-0 left-0 w-full h-full p-5 text-left z-50 text-white bg-gradient-to-t from-black to-white/20 ">
+
+                <div className="absolute top-0 left-0 w-full h-full z-50 p-5  flex flex-col justify-center flex-1 ">
+                  <h2 className="text-xl font-semibold mb-2 text-white">{item.title}</h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iste ex voluptatum necessitatibus reprehenderit accusamus
-                    possimus.
+
                   </p>
-                  <div className=" my-10  ">
-                    <p className="text-sm  mb-2">
-                      Publié le {item.date} par {item.author}
-                    </p>
-                    <div className="flex items-center space-x-4 text-gray-600  justify-center"></div>
-                    <div className="flex justify-between items-center text-[#dedede]/86 mt-2 text-[12px]">
+                  <div className=" absolute bottom-0 left-0 w-full p-5">
+                    <div className="flex justify-between items-center text-white  mt-2 text-[12px] ">
                       <div>
                         <span>{item.likes} </span>
                         <span className="text-red-400 ">
@@ -151,13 +151,14 @@ function TutorielCarrousel() {
                       <div>
                         <span>{item.comments}</span> <FiMessageSquare />{" "}
                       </div>
-                      <Button className=" px-2 border-2  rounded-full  bg-teal-800 text-sm shadow-md  font-bold  transition duration-300 hover:bg-transparent text-[#dedede]">
+                      <Button className="hover:text-white border-2  rounded-full  bg-white text-teal-600 border-teal-600 text-sm shadow-md  font-bold  transition duration-300 hover:bg-transparent ">
                         Lire la suite <FiArrowRight />
                       </Button>
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black  to-[#161616]/60 -z-5 "></div>
+                <div className="absolute top-0 left-0 w-full h-full    -z-5 "></div>
+                {/* bg-[#161616]/60 */}
               </div>
             </div>
           ))}
